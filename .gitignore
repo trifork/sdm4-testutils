@@ -1,0 +1,12 @@
+*.iml
+*.ipr
+*.iws
+.idea
+.settings
+.project
+.classpath
+target
+.DS_Store
+release.properties
+pom.xml.releaseBackup
+*~

@@ -3,8 +3,10 @@ package dk.nsi.sdm4.testutils;
 
 import com.mysql.jdbc.Driver;
 import dk.nsi.sdm4.core.persistence.migration.DbMigrator;
+import dk.nsi.sdm4.core.persistence.recordpersister.RecordPersister;
 import dk.sdsd.nsp.slalog.api.SLALogger;
 import dk.sdsd.nsp.slalog.impl.SLALoggerDummyImpl;
+import org.joda.time.Instant;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -67,5 +69,10 @@ public class TestDbConfiguration {
 	@Bean
 	public SLALogger slaLogger() {
 		return new SLALoggerDummyImpl();
+	}
+
+	@Bean
+	public RecordPersister persister() {
+		return new RecordPersister(Instant.now());
 	}
 }

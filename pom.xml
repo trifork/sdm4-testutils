@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>dk.nsi.stamdata4</groupId>
-		<artifactId>sdm-parent</artifactId>
-		<version>4.1-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>dk.nsi.stamdata4</groupId>
+        <artifactId>sdm-parent</artifactId>
+        <version>4.1</version>
+    </parent>
 
-	<artifactId>testutils</artifactId>
-	<packaging>jar</packaging>
+    <artifactId>testutils</artifactId>
+    <packaging>jar</packaging>
+    <version>4.1-SNAPSHOT</version>
+
+    <distributionManagement>
+        <repository>
+            <id>Trifork-Nexus-Release-Repository</id>
+            <name>Trifork Nexus Release Repository</name>
+            <url>https://nexus.trifork.com/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>Trifork-Nexus-Public-Repository</id>
+            <name>Trifork Nexus Public Repository</name>
+            <url>https://nexus.trifork.com/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>Trifork-Nexus-Public-Repository</id>
+            <name>Trifork Nexus Public Repository</name>
+            <url>https://nexus.trifork.com/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <scm>
+        <url>scm:git:git@github.com:trifork/sdm4-testutils</url>
+        <connection>scm:git:git@github.com:trifork/sdm4-testutils.git</connection>
+        <developerConnection>scm:git:git@github.com:trifork/sdm4-testutils.git</developerConnection>
+    </scm>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://jira.trifork.com/</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://ci02.trifork.com:8443/view/SDM4/job/SDM4-testutils/</url>
+    </ciManagement>
 
 	<dependencies>
         <dependency>

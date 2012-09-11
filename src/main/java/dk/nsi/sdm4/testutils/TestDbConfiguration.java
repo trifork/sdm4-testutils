@@ -46,7 +46,7 @@ public class TestDbConfiguration {
 		DataSource adminDs = new SimpleDriverDataSource(new Driver(), jdbcUrlPrefix + "mysql", db_username, db_password);
 		JdbcTemplate adminJdbc = new JdbcTemplate(adminDs);
 		adminJdbc.update("DROP DATABASE IF EXISTS " + testDbName); // will be created automatically by the "normal" datasource
-		System.out.println("Drop db took " + (System.currentTimeMillis()-startMillis) + " ms");
+		System.out.println("Drop db " + testDbName + " took " + (System.currentTimeMillis()-startMillis) + " ms");
 
 		return new SimpleDriverDataSource(new Driver(), jdbcUrlPrefix + testDbName + "?createDatabaseIfNotExist=true", db_username, db_password);
 	}

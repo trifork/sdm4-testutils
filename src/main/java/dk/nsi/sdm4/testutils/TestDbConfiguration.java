@@ -72,7 +72,7 @@ public class TestDbConfiguration {
 	}
 
 	@Bean
-	public RecordPersister persister() {
+	public RecordPersister recordPersister() {
 		return new RecordPersister(Instant.now());
 	}
 }

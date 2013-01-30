@@ -9,7 +9,7 @@
 
     <artifactId>testutils</artifactId>
     <packaging>jar</packaging>
-    <version>4.2-SNAPSHOT</version>
+    <version>4.2</version>
 
     <distributionManagement>
         <repository>

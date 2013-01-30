@@ -3,6 +3,7 @@ package dk.nsi.sdm4.testutils;
 
 import com.mysql.jdbc.Driver;
 import dk.nsi.sdm4.core.persistence.migration.DbMigrator;
+import dk.nsi.sdm4.core.persistence.recordpersister.RecordFetcher;
 import dk.nsi.sdm4.core.persistence.recordpersister.RecordPersister;
 import dk.sdsd.nsp.slalog.api.SLALogger;
 import dk.sdsd.nsp.slalog.impl.SLALoggerDummyImpl;
@@ -30,6 +31,8 @@ public class TestDbConfiguration {
 
 	private String db_username = "root";
 	private String db_password = "papkasse";
+
+    private Instant now = Instant.now();
 
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer properties(){
@@ -71,8 +74,18 @@ public class TestDbConfiguration {
 		return new SLALoggerDummyImpl();
 	}
 
+    @Bean
+    public Instant transactionTime() {
+        return Instant.now();
+    }
+
 	@Bean
 	public RecordPersister recordPersister() {
-		return new RecordPersister(Instant.now());
+		return new RecordPersister(now);
 	}
+
+    @Bean
+    public RecordFetcher recordFetcher() {
+        return new RecordFetcher(now);
+    }
 }
